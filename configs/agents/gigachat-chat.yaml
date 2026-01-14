@@ -1,0 +1,17 @@
+module: src.client.agents.GigaAgent
+parameters:
+  url: https://gigachat.devices.sberbank.ru/api/v1
+  headers:
+    Content-Type: application/json
+    Authorization: Bearer ...
+  body:
+    temperature: 0
+  prompter:
+    name: role_content_dict
+    args:
+      agent_role: assistant
+  return_format: "{response[choices][0][message][content]}"
+  gigachat_api_scope: GIGACHAT_API_CORP
+  credentials: ODE4ZmY5M2ItN2Y2NC00ODIxLTkzZjMtMGY4MjIwOGNiYmYwOjg5ZWQwMTk5LWNjZDUtNGI2Ni1hODMyLTBhMzRiYjkzNTgyMg==
+  tools:
+    tavily_api_key: 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

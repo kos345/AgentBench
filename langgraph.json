@@ -1,0 +1,16 @@
+{
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "Part 1: Build a Basic Chatbot": "graphs/part_1.py:graph",
+    "Part 2: Enhancing the Chatbot with Tools": "graphs/part_2.py:graph",
+    "Part 3: Adding Memory to the Chatbot": "graphs/part_3.py:graph",
+    "Part 4: Human-in-the-loop": "graphs/part_4.py:graph",
+    "Part 5: Manually Updating the State": "graphs/part_5.py:graph",
+    "Part 6: Customizing State": "graphs/part_6.py:graph",
+    "Part 7: Time Travel": "graphs/part_7.py:graph"
+  },
+  "env": "./.env",
+  "dockerfile_lines": []
+}

@@ -1,0 +1,7 @@
+GigaChat-2:
+    import: "./gigachat-chat.yaml"
+    parameters:
+        name: "GigaChat-2"
+        body:
+            model: "GigaChat-2"
+            max_tokens: 2048

@@ -188,7 +188,8 @@ class Assigner:
                 for agent in self.agents:
                     edges[(0, agent_node_index[agent])] = self.free_worker.agent[agent]
                 for task in self.tasks:
-                    edges[(task_node_index[task], 1)] = self.free_worker.task[task]
+                    # edges[(task_node_index[task], 1)] = self.free_worker.task[task]
+                    edges[(task_node_index[task], 1)] = 0
                 tot_remaining_samples = 0
                 for agent in self.remaining_tasks:
                     for task in self.remaining_tasks[agent]:
@@ -409,7 +410,9 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--config", "-c", type=str, default="configs/assignments/default.yaml"
+        "--config", "-c", type=str, default="/home/pai/projects/AI-агенты/benchmarks/AgentBench/configs/assignments/gigachat2.yaml"
+        # "--config", "-c", type=str, default="/home/pai/projects/AI-агенты/benchmarks/AgentBench/configs/assignments/my_gigachat_assignment.yaml"
+        # "--config", "-c", type=str, default="configs/assignments/default.yaml"
     )
     parser.add_argument(
         "--auto-retry", "-r", action="store_true", dest="retry"
@@ -418,7 +421,8 @@ if __name__ == "__main__":
 
     loader = ConfigLoader()
     config_ = loader.load_from(args.config)
-    value = AssignmentConfig.parse_obj(config_)
+    # value = AssignmentConfig.parse_obj(config_)
+    value = AssignmentConfig.model_validate(config_)
     value = AssignmentConfig.post_validate(value)
     v = value.dict()
     with std_out_err_redirect_tqdm() as orig_stdout:

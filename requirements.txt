@@ -16,3 +16,11 @@ anthropic~=0.4.1
 fschat~=0.2.31
 accelerate~=0.23.0
 transformers~=4.34.0
+typing-extensions>=4.12.2
+langchain-gigachat>=0.3.2
+langchain-community>=0.3.12
+langgraph>=0.2.59
+langgraph-checkpoint>=2.0.9
+pydantic>=2.10.3
+langgraph-sdk==0.1.46
+

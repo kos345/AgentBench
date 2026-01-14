@@ -1,0 +1,17 @@
+import: definition_gigachat2.yaml
+
+concurrency:
+  task:
+    #os-std: 5
+    dbbench-std: 5
+  agent:
+    GigaChat-2: 5
+
+assignments: # List[Assignment] | Assignment
+  - agent: # "task": List[str] | str ,  "agent": List[str] | str
+      - GigaChat-2
+    task:
+      #- os-std
+      - dbbench-std
+
+output: "outputs/{TIMESTAMP}"
